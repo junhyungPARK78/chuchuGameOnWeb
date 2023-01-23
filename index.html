@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | chuchuUnityTest</title>
+    <title>Unity WebGL Player | chuchuGame</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=564 height=1024 style="background: #231F20"></canvas>
-    <script src="Build/chuchuUnityTest.loader.js"></script>
+    <canvas id="unity-canvas" width=932 height=1028 style="background: #231F20"></canvas>
+    <script src="Build/chuchuGame.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -26,20 +26,20 @@
       else {
         // PC 브라우저 style
         var browserScreenRatio = window.innerWidth / window.innerHeight;
-        var gameScreenRatio = 564 / 1024;
-        var maxWidth = Math.min(window.innerWidth, 564);
-        var maxHeight = Math.min(window.innerHeight, 1024);
+        var gameScreenRatio = 932 / 1028;
+        var maxWidth = Math.min(window.innerWidth, 932);
+        var maxHeight = Math.min(window.innerHeight, 1028);
         
         var canvas = document.querySelector("#unity-canvas");
 
         if (browserScreenRatio > gameScreenRatio) {
-          var widthResult = maxHeight * ( 564 / 1024 );
+          var widthResult = maxHeight * ( 932 / 1028 );
 
           canvas.style.width = widthResult.toString() + "px";
           canvas.style.height = maxHeight.toString() + "px";
         }
         else {
-          var heightResult = maxWidth * ( 1024 / 564 );
+          var heightResult = maxWidth * ( 1028 / 932 );
 
           canvas.style.width = maxWidth.toString() + "px";
           canvas.style.height = heightResult.toString() + "px";
@@ -47,13 +47,13 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/chuchuUnityTest.data.unityweb",
-        frameworkUrl: "Build/chuchuUnityTest.framework.js.unityweb",
-        codeUrl: "Build/chuchuUnityTest.wasm.unityweb",
+        dataUrl: "Build/chuchuGame.data.unityweb",
+        frameworkUrl: "Build/chuchuGame.framework.js.unityweb",
+        codeUrl: "Build/chuchuGame.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "chuchuUnityTest",
-        productVersion: "1.0",
+        productName: "chuchuGame",
+        productVersion: "0.1",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });

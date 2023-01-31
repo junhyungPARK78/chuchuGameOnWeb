@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | chuchuGame</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=932 height=1028 style="background: #231F20"></canvas>
+    <canvas id="unity-canvas" width=852 height=1224 style="background: #231F20"></canvas>
     <script src="Build/chuchuGame.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -26,20 +26,20 @@
       else {
         // PC 브라우저 style
         var browserScreenRatio = window.innerWidth / window.innerHeight;
-        var gameScreenRatio = 932 / 1028;
-        var maxWidth = Math.min(window.innerWidth, 932);
-        var maxHeight = Math.min(window.innerHeight, 1028);
+        var gameScreenRatio = 852 / 1224;
+        var maxWidth = Math.min(window.innerWidth, 852);
+        var maxHeight = Math.min(window.innerHeight, 1224);
         
         var canvas = document.querySelector("#unity-canvas");
 
         if (browserScreenRatio > gameScreenRatio) {
-          var widthResult = maxHeight * ( 932 / 1028 );
+          var widthResult = maxHeight * ( 852 / 1224 );
 
           canvas.style.width = widthResult.toString() + "px";
           canvas.style.height = maxHeight.toString() + "px";
         }
         else {
-          var heightResult = maxWidth * ( 1028 / 932 );
+          var heightResult = maxWidth * ( 1224 / 852 );
 
           canvas.style.width = maxWidth.toString() + "px";
           canvas.style.height = heightResult.toString() + "px";
